@@ -1,0 +1,10 @@
+
+RewriteEngine on
+
+RewriteOptions inherit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^cenpripower\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.cenpripower\.com$
+RewriteRule ^/?$ "https\:\/\/cenpripower\.com\/" [R=301,L]
+
